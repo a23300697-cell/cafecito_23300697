@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro de pedido - Cafecito</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">Cafecito</span>
+  </header>
+
+  <main class="page">
+    <section class="card">
+      <div class="titlebar">
+        <h1>Registro de pedido</h1>
+      </div>
+
+      <form id="form-pedido" action="http://localhost:3000/pedido" method="POST" novalidate>
+        <div class="grid">
+          <div class="field" id="campo-nombre">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" aria-describedby="error-nombre">
+            <span class="error" id="error-nombre" role="alert"></span>
+          </div>
+
+          <div class="field" id="campo-email">
+            <label for="email">gmail</label>
+            <input type="email" id="email" name="email" autocomplete="email" aria-describedby="error-email">
+            <span class="error" id="error-email" role="alert"></span>
+          </div>
+
+          <div class="field" id="campo-producto">
+            <label for="producto">Producto</label>
+            <select id="producto" name="producto" aria-describedby="error-producto">
+              <option value="">Selecciona</option>
+              <option>Cafe americano</option>
+              <option>Capuchino</option>
+              <option>Latte</option>
+              <option>Te chai</option>
+              <option>Frappe de moka</option>
+              <option>Pan dulce</option>
+            </select>
+            <span class="error" id="error-producto" role="alert"></span>
+          </div>
+
+          <div class="field" id="campo-cantidad">
+            <label for="cantidad">Cantidad</label>
+            <input type="number" id="cantidad" name="cantidad" min="1" step="1" inputmode="numeric" aria-describedby="error-cantidad">
+            <span class="error" id="error-cantidad" role="alert"></span>
+          </div>
+        </div>
+
+        <fieldset class="tamano">
+          <legend>Tamaño</legend>
+          <div class="sizes">
+            <label class="size-opt">
+              <input type="radio" name="tamano" value="Grande" checked>
+              <span>Grande</span>
+            </label>
+            <label class="size-opt">
+              <input type="radio" name="tamano" value="Mediano">
+              <span>Mediano</span>
+            </label>
+            <label class="size-opt">
+              <input type="radio" name="tamano" value="Chico">
+              <span>Chico</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="take">
+          <label for="llevar">¿Pedido para llevar?</label>
+          <input type="checkbox" id="llevar" name="llevar">
+        </div>
+
+        <div class="field obs">
+          <label for="observaciones">Observaciones:</label>
+          <textarea id="observaciones" name="observaciones" rows="4"></textarea>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Registrar pedido</button>
+          <button type="button" class="btn btn-secondary" id="btn-limpiar">Limpiar</button>
+        </div>
+
+        <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

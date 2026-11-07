@@ -1,0 +1,47 @@
+/* Estilos de resumen.html. Usa las variables y clases de styles.css */
+
+.contenido { padding: 16px 20px 28px; }
+
+.resumen {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 0;
+}
+
+.fila {
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: #fff;
+}
+.fila dt {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--verde);
+  margin-bottom: 4px;
+}
+.fila dd {
+  margin: 0;
+  word-break: break-word;
+}
+
+.actions.una { grid-template-columns: 1fr; }
+a.btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+@media (min-width: 600px) {
+  .contenido { padding: 24px 40px 40px; }
+  .resumen { grid-template-columns: 1fr 1fr; }
+  .fila.ancha { grid-column: 1 / -1; }
+}
+
+@media (min-width: 1024px) {
+  .contenido { padding: 20px 48px 36px; }
+  .resumen { gap: 20px 28px; }
+  .fila dt { font-weight: 400; color: var(--texto); font-size: 1rem; }
+  .fila.ancha dt { font-weight: 700; }
+}

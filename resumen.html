@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen del pedido - Cafecito</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/resumen.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">Cafecito</span>
+  </header>
+
+  <main class="page">
+    <section class="card">
+      <div class="titlebar">
+        <h1>Resumen del pedido</h1>
+      </div>
+
+      <div class="contenido">
+        <p id="sinDatos" class="mensaje fail" role="alert" hidden>
+          No se recibieron datos. Regresa al formulario para registrar un pedido.
+        </p>
+
+        <dl class="resumen">
+          <div class="fila"><dt>No. de pedido</dt><dd id="rId"></dd></div>
+          <div class="fila"><dt>Nombre</dt><dd id="rNombre"></dd></div>
+          <div class="fila"><dt>Gmail</dt><dd id="rEmail"></dd></div>
+          <div class="fila"><dt>Producto</dt><dd id="rProducto"></dd></div>
+          <div class="fila"><dt>Cantidad</dt><dd id="rCantidad"></dd></div>
+          <div class="fila"><dt>Tamaño</dt><dd id="rTamano"></dd></div>
+          <div class="fila"><dt>Para llevar</dt><dd id="rLlevar"></dd></div>
+          <div class="fila ancha"><dt>Observaciones</dt><dd id="rObservaciones"></dd></div>
+        </dl>
+
+        <p id="estadoRegistro" class="mensaje" role="status" aria-live="polite"></p>
+
+        <div class="actions una">
+          <a href="/" class="btn btn-primary">Nuevo pedido</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/resumen.js"></script>
+</body>
+</html>
